@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react';
 import {View} from 'react-native';
-import getWheather from '../../Requests/getWeather';
+import getPlace from '../../Requests/getPlace';
 
 // import { Container } from './styles';
 
 function Home() {
   useEffect(() => {
-    // getWheather();
+    getPlace('Pau dos Ferros');
   }, []);
 
   return <View />;

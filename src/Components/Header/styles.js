@@ -6,6 +6,9 @@ export const Container = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+`;
 
- 
+export const TextPage = styled.Text`
+  font-size: 20px;
+  color: ${colors.white};
 `;
