@@ -13,12 +13,13 @@ function Routes() {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
-          headerStyle: {
-            backgroundColor: colors.primary,
-          },
-          headerTitleStyle: {
-            color: colors.white,
-          },
+          // headerStyle: {
+          //   backgroundColor: colors.primary,
+          // },
+          // headerTitleStyle: {
+          //   color: colors.white,
+          // },
+          headerShown: false,
         }}>
         <Stack.Screen
           options={{
