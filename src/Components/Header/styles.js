@@ -20,7 +20,7 @@ export const TextPage = styled.Text`
   font-size: 20px;
   color: ${colors.white};
 `;
-
+// lat=-6.112330999999999&lon=-38.2052039
 export const Input = styled.TextInput.attrs({
   placeholderTextColor: colors.white,
 })`
@@ -28,4 +28,11 @@ export const Input = styled.TextInput.attrs({
   width: 50%;
   font-size: 18px;
   margin-left: 21px;
+`;
+
+export const SearchButton = styled.TouchableOpacity`
+  width: 20px;
+  height: 16px;
+  display: flex;
+  align-items: center;
 `;

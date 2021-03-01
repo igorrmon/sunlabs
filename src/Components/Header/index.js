@@ -1,6 +1,12 @@
 import React, {useState} from 'react';
 import {Text, TextInput, View} from 'react-native';
-import {Container, ContainerSpace, Input, TextPage} from './styles';
+import {
+  Container,
+  ContainerSpace,
+  Input,
+  SearchButton,
+  TextPage,
+} from './styles';
 
 import Icon from 'react-native-vector-icons/Fontisto';
 import colors from '../../UI/colors';
@@ -27,17 +33,17 @@ function Header({digit, setDigit, setResults}) {
             <TextPage>Cidades</TextPage>
           </View>
           <View>
-            <TouchableOpacity onPress={() => setViewSearch(false)}>
+            <SearchButton onPress={() => setViewSearch(false)}>
               <Text>{searchIcon}</Text>
-            </TouchableOpacity>
+            </SearchButton>
           </View>
         </ContainerSpace>
       ) : (
         <Container>
           <View>
-            <TouchableOpacity onPress={() => handleClose(true)}>
+            <SearchButton onPress={() => handleClose(true)}>
               {closeIcon}
-            </TouchableOpacity>
+            </SearchButton>
           </View>
 
           <Input

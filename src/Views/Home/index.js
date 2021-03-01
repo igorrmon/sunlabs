@@ -11,11 +11,8 @@ function Home() {
   const [digit, setDigit] = useState('');
 
   useEffect(() => {
-    if (digit.length > 0) {
-      getPlace(digit, setResults);
-    } else {
-      setResults([]);
-    }
+    setResults([]);
+    getPlace(digit, setResults, results);
   }, [digit]);
 
   return (
@@ -25,7 +22,9 @@ function Home() {
         <FlatList
           // key={(key)=> }
           contentContainerStyle={{display: 'flex', alignItems: 'center'}}
-          keyExtractor={(item, index) => item.place_id}
+          keyExtractor={(item, index) => {
+            item?.id;
+          }}
           data={results}
           renderItem={(item) => {
             return <CardCities infos={item} />;

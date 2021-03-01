@@ -24,23 +24,30 @@ const noHeart = <Icon name="heart-o" size={30} color={colors.favorite} />;
 
 const CardCities = ({infos}) => {
   const [favorite, setFavorite] = useState(false);
-
+  {
+    console.log(infos);
+  }
   return (
     <Container>
       <Card>
         <Section>
           <PartOne>
-            <Title>{infos.item.structured_formatting.main_text}</Title>
-            <Text>{infos.item.terms[infos.item.terms.length - 1].value}</Text>
+            <Title>{infos.item?.name}</Title>
+            <Text>{infos.item?.sys.country}</Text>
           </PartOne>
           <View>
-            <Temperature>18°</Temperature>
+            <Temperature>
+              <Text>{parseInt(infos.item?.main.temp)}°</Text>
+            </Temperature>
           </View>
         </Section>
         <SectionTwo>
           <View>
-            <Condition>Parcialmente nublado</Condition>
-            <Text>18º - 24º</Text>
+            <Condition>{infos.item?.weather[0]?.description}</Condition>
+            <Text>
+              {parseInt(infos.item?.main.temp_min)}° -
+              {parseInt(infos.item?.main.temp_max)}°
+            </Text>
           </View>
           <TouchableOpacity onPress={() => setFavorite(!favorite)}>
             {favorite ? heart : noHeart}

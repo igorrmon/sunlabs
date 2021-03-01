@@ -53,6 +53,7 @@ export const Temperature = styled.Text`
 export const Condition = styled.Text`
   font-size: 14px;
   color: ${colors.secondary};
+  text-transform: capitalize;
 `;
 
 export const FavoriteTouch = styled.TouchableOpacity``;
