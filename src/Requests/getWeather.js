@@ -1,7 +1,14 @@
 import {weather_key} from '../Configs/weatherkey';
 import api from '../Services/api';
 
-export default async function getWheather(units, lat, lon, place_name) {
+export default async function getWheather(
+  units,
+  lat,
+  lon,
+  place_name,
+  place_state,
+  favorite,
+) {
   let lang = 'pt_br';
   // console.log('lat', lat);
 
@@ -13,6 +20,8 @@ export default async function getWheather(units, lat, lon, place_name) {
       return Promise.resolve({
         result: response.data,
         place_name: place_name,
+        place_state: place_state,
+        favorite: favorite,
       });
 
       // console.log('resultado', response.data);

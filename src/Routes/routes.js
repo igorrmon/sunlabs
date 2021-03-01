@@ -4,6 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Home from '../Views/Home';
 import colors from '../UI/colors';
 import Header from '../Components/Header';
+import Details from '../Views/Details';
 const Stack = createStackNavigator();
 
 // import { Container } from './styles';
@@ -12,22 +13,12 @@ function Routes() {
   return (
     <NavigationContainer>
       <Stack.Navigator
+        initialRouteName="Cidades"
         screenOptions={{
-          // headerStyle: {
-          //   backgroundColor: colors.primary,
-          // },
-          // headerTitleStyle: {
-          //   color: colors.white,
-          // },
           headerShown: false,
         }}>
-        <Stack.Screen
-          options={{
-            headerTitle: () => <Header />,
-          }}
-          name="Cidades"
-          component={Home}
-        />
+        <Stack.Screen name="Cidades" component={Home} />
+        <Stack.Screen name="Details" component={Details} />
       </Stack.Navigator>
     </NavigationContainer>
   );

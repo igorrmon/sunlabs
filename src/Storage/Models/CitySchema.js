@@ -5,6 +5,8 @@ const CitySchema = {
     long: 'string',
     place_id: 'string',
     place_name: 'string',
+    place_state: 'string',
+    favorite: 'bool',
   },
 };
 

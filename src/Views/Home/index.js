@@ -8,7 +8,7 @@ import getPlace from '../../Requests/getPlace';
 import getCities from '../../Storage/Controllers/getCities';
 import {Container} from './styles';
 
-function Home() {
+function Home({navigation}) {
   const [results, setResults] = useState([]);
   const [getRealm, setGetRealm] = useState([]);
   const [digit, setDigit] = useState('');
@@ -50,7 +50,7 @@ function Home() {
             keyExtractor={(item, index) => item.result.id.toString()}
             data={getRealm}
             renderItem={(item) => {
-              return <CardCities infos={item} />;
+              return <CardCities navigation={navigation} infos={item} />;
             }}
             extraData={getRealm}
           />

@@ -22,18 +22,31 @@ const noHeart = <Icon name="heart-o" size={30} color={colors.favorite} />;
 
 // import { Container } from './styles';
 
-const CardCities = ({infos}) => {
+const CardCities = ({infos, navigation}) => {
   const [favorite, setFavorite] = useState(false);
   {
     console.log(infos);
   }
+
+  function viewDetails() {
+    navigation.push('Details', {
+      infos: infos,
+    });
+  }
+
   return (
     <Container>
-      <Card>
+      <Card
+        onPress={() => {
+          viewDetails();
+        }}>
         <Section>
           <PartOne>
             <Title>{infos.item?.place_name}</Title>
-            <Text>{infos.item?.result.sys.country}</Text>
+            <Text>
+              {infos.item?.place_state + ', '}
+              {infos.item?.result.sys.country}
+            </Text>
           </PartOne>
           <View>
             <Temperature>

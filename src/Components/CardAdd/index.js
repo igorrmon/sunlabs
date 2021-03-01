@@ -18,12 +18,12 @@ import saveCity from '../../Storage/Controllers/saveCity';
 // import { Container } from './styles';
 
 const CardAdd = ({infos}) => {
-  const city = infos.item.results[0].address_components[0].long_name;
-  const country = infos.item.results[0].address_components.find((item) =>
+  const city = infos.item.results[0]?.address_components[0].long_name;
+  const country = infos.item.results[0]?.address_components.find((item) =>
     getCountry(item),
   );
 
-  const state = infos.item.results[0].address_components.find((item) =>
+  const state = infos.item.results[0]?.address_components.find((item) =>
     getState(item),
   );
 
@@ -38,13 +38,13 @@ const CardAdd = ({infos}) => {
   }
 
   function saveCityCallBack() {
-    let place_id = infos.item.results[0].place_id;
-    let geometry = infos.item.results[0].geometry.location;
+    let place_id = infos.item.results[0]?.place_id;
+    let geometry = infos.item.results[0]?.geometry.location;
 
     let lat = geometry.lat;
     let lon = geometry.lng;
 
-    saveCity(lat, lon, place_id, city);
+    saveCity(lat, lon, place_id, city, state);
   }
 
   return (

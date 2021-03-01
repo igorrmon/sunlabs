@@ -17,6 +17,8 @@ export default function getCities(setGetRealm) {
               item.lat,
               item.long,
               item.place_name,
+              item.place_state,
+              item.favorite,
             );
             return results;
           }),
