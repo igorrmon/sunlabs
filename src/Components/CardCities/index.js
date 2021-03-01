@@ -32,21 +32,21 @@ const CardCities = ({infos}) => {
       <Card>
         <Section>
           <PartOne>
-            <Title>{infos.item?.name}</Title>
-            <Text>{infos.item?.sys.country}</Text>
+            <Title>{infos.item?.place_name}</Title>
+            <Text>{infos.item?.result.sys.country}</Text>
           </PartOne>
           <View>
             <Temperature>
-              <Text>{parseInt(infos.item?.main.temp)}°</Text>
+              <Text>{parseInt(infos.item?.result.main.temp)}°</Text>
             </Temperature>
           </View>
         </Section>
         <SectionTwo>
           <View>
-            <Condition>{infos.item?.weather[0]?.description}</Condition>
+            <Condition>{infos.item?.result.weather[0]?.description}</Condition>
             <Text>
-              {parseInt(infos.item?.main.temp_min)}° -
-              {parseInt(infos.item?.main.temp_max)}°
+              {parseInt(infos.item?.result.main.temp_min)}° -
+              {parseInt(infos.item?.result.main.temp_max)}°
             </Text>
           </View>
           <TouchableOpacity onPress={() => setFavorite(!favorite)}>

@@ -10,6 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.14.1",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/native": "^5.9.3",
     "@react-navigation/stack": "^5.14.3",
@@ -23,6 +24,7 @@
     "react-native-vector-icons": "^8.1.0",
     "react-navigation": "^4.4.4",
     "react-navigation-stack": "^2.10.3",
+    "realm": "^10.2.0",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {

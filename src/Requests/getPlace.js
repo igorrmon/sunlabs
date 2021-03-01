@@ -14,29 +14,35 @@ export default async function getPlace(local, setResults, results) {
       // setResults(response.data.predictions);
       let objects = response.data.predictions;
       // console.log('objects', objects);
-      // Promisse.all((objects) => getGeoCode());
-      // objects.map((item) => {
-      //   getGeoCode(item.place_id, setResults, results);
-      // });
-      // console.log(objects[0].structured_formatting.main_text);
       Promise.all(
         objects.map(async (item) => {
-          const weather = await getWheather(
-            'metric',
-            item,
-            setResults,
-            results,
-          );
-          return weather;
+          const code = await getGeoCode(item.place_id);
+          return code;
         }),
-      )
-        .then((response) => {
-          // console.log(response[0]);
-          let final = response.filter((item, index) => item);
-          // console.log(final);
-          setResults(final);
-        })
-        .catch((e) => console.log(e));
+      ).then((response) => {
+        setResults(response);
+      });
+
+      // console.log(objects[0].structured_formatting.main_text);
+
+      // Promise.all(
+      //   objects.map(async (item) => {
+      //     const weather = await getWheather(
+      //       'metric',
+      //       item,
+      //       setResults,
+      //       results,
+      //     );
+      //     return weather;
+      //   }),
+      // )
+      //   .then((response) => {
+      //     // console.log(response[0]);
+      //     let final = response.filter((item, index) => item);
+      //     // console.log(final);
+      //     setResults(final);
+      //   })
+      //   .catch((e) => console.log(e));
       // Promise.all(response.data.predictions).then((result) => {
 
       // });
