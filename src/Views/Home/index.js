@@ -3,6 +3,7 @@ import {View, Text} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
 import CardAdd from '../../Components/CardAdd';
 import CardCities from '../../Components/CardCities';
+import FloatButtom from '../../Components/FloatButton';
 import Header from '../../Components/Header';
 import getPlace from '../../Requests/getPlace';
 import getCities from '../../Storage/Controllers/getCities';
@@ -36,7 +37,7 @@ function Home({navigation}) {
           <FlatList
             // key={(key)=> }
             contentContainerStyle={{display: 'flex', alignItems: 'center'}}
-            keyExtractor={(item, index) => item.place_id}
+            keyExtractor={(item, index) => index}
             data={results}
             renderItem={(item) => {
               return <CardAdd infos={item} setDigit={setDigit} />;
@@ -44,16 +45,23 @@ function Home({navigation}) {
             extraData={results}
           />
         ) : (
-          <FlatList
-            // key={(key)=> }
-            contentContainerStyle={{display: 'flex', alignItems: 'center'}}
-            keyExtractor={(item, index) => item.result.id.toString()}
-            data={getRealm}
-            renderItem={(item) => {
-              return <CardCities navigation={navigation} infos={item} />;
-            }}
-            extraData={getRealm}
-          />
+          <>
+            <FlatList
+              // key={(key)=> }
+              contentContainerStyle={{
+                display: 'flex',
+                alignItems: 'center',
+              }}
+              keyExtractor={(item, index) => item.result.id.toString()}
+              data={getRealm}
+              renderItem={(item) => {
+                return <CardCities navigation={navigation} infos={item} />;
+              }}
+              extraData={getRealm}
+            />
+
+            <FloatButtom />
+          </>
         )}
 
         {/* // <Text>{results[0]?.description}</Text> */}
