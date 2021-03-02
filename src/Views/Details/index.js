@@ -4,6 +4,7 @@ import {FlatList} from 'react-native-gesture-handler';
 
 import {Results} from 'realm';
 import CardDetails from '../../Components/CardDetails';
+import FloatButtomTemperature from '../../Components/FloatButtonTemperature';
 import Header from '../../Components/Header';
 import HeaderDetails from '../../Components/HeaderDetails';
 import getWheatherDetails from '../../Requests/getWeatherDetails';
@@ -14,10 +15,11 @@ import {Container} from '../Home/styles';
 function Details({route, navigation}) {
   const {lat, lon, city} = route.params;
   const [results, setResults] = useState([]);
+  const [units, setUnits] = useState('metric');
 
   useEffect(() => {
-    getWheatherDetails(lat, lon, setResults);
-  }, []);
+    getWheatherDetails(lat, lon, setResults, units);
+  }, [units]);
 
   return (
     <>
@@ -33,6 +35,7 @@ function Details({route, navigation}) {
           }}
           extraData={results}
         />
+        <FloatButtomTemperature setUnits={setUnits} />
       </Container>
     </>
   );
