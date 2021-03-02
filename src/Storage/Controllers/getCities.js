@@ -1,6 +1,8 @@
 import CitySchema from '../Models/CitySchema';
 import Realm from 'realm';
 import getWheather from '../../Requests/getWeather';
+import SnackMessage from '../../Utils/messages';
+import colors from '../../UI/colors';
 
 function _typeFunction(type, realm) {
   if (type === 0) {
@@ -38,6 +40,12 @@ export default function getCities(setGetRealm, type) {
           }),
         ).then((response) => {
           setGetRealm(response);
+          if (response.length === 0) {
+            SnackMessage(
+              colors.primary,
+              'Nenhum resultado encontrado para essa categoria!',
+            );
+          }
         });
       }
 
