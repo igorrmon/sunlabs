@@ -17,7 +17,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Google Geocode](https://developers.google.com/maps/documentation/geocoding/overview)
 - [OpenWeather](https://openweathermap.org/)
 
--Obs: Foi utilizado o Geocode pois a api do OpenWeather possui alguma limitações em relação a string da cidade a ser buscada, para uma maior precisão o Geocode fornece informações de latitude e longitude o que com a openweathermap permite uma maior precisão do local a ser visualizado.
+-Obs: Foi utilizado o Geocode dado que a api do OpenWeather possui algumas limitações em relação a string da cidade a ser buscada, para uma maior precisão o Geocode fornece informações de latitude e longitude, o que com a openweathermap permite uma maior precisão do local a ser visualizado.
 
 ## 💻 Sobre o Projeto
 
