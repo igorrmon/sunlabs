@@ -13,12 +13,20 @@ function Routes() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Cidades"
+        initialRouteName="Home"
         screenOptions={{
           headerShown: false,
         }}>
-        <Stack.Screen name="Cidades" component={Home} />
-        <Stack.Screen name="Details" component={Details} />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          option={{header: (props) => <Header {...props} />}}
+        />
+        <Stack.Screen
+          name="Details"
+          component={Details}
+          option={{header: (props) => <Header {...props} />}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

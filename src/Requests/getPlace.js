@@ -14,6 +14,7 @@ export default async function getPlace(local, setResults, results) {
       // setResults(response.data.predictions);
       let objects = response.data.predictions;
       // console.log('objects', objects);
+
       Promise.all(
         objects.map(async (item) => {
           const code = await getGeoCode(item.place_id);

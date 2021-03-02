@@ -10,6 +10,8 @@ import {
   MinMax,
   PartOne,
   SectionTwo,
+  ButtonsDouble,
+  CalendarButton,
 } from './styles';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -19,6 +21,7 @@ import Heart from '../../Assets/heart.png';
 
 const heart = <Icon name="heart" size={30} color={colors.favorite} />;
 const noHeart = <Icon name="heart-o" size={30} color={colors.favorite} />;
+const calendar = <Icon name="calendar" size={30} color={colors.primary} />;
 
 // import { Container } from './styles';
 
@@ -29,17 +32,16 @@ const CardCities = ({infos, navigation}) => {
   }
 
   function viewDetails() {
-    navigation.push('Details', {
-      infos: infos,
+    navigation.navigate('Details', {
+      lat: infos.item.result.coord.lat,
+      lon: infos.item.result.coord.lon,
+      city: infos.item?.place_name,
     });
   }
 
   return (
     <Container>
-      <Card
-        onPress={() => {
-          viewDetails();
-        }}>
+      <Card>
         <Section>
           <PartOne>
             <Title>{infos.item?.place_name}</Title>
@@ -62,9 +64,18 @@ const CardCities = ({infos, navigation}) => {
               {parseInt(infos.item?.result.main.temp_max)}°
             </Text>
           </View>
-          <TouchableOpacity onPress={() => setFavorite(!favorite)}>
-            {favorite ? heart : noHeart}
-          </TouchableOpacity>
+          <ButtonsDouble>
+            <CalendarButton
+              onPress={() => {
+                viewDetails();
+              }}>
+              {calendar}
+            </CalendarButton>
+
+            <TouchableOpacity onPress={() => setFavorite(!favorite)}>
+              {favorite ? heart : noHeart}
+            </TouchableOpacity>
+          </ButtonsDouble>
         </SectionTwo>
       </Card>
     </Container>

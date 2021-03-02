@@ -12,7 +12,7 @@ export const Container = styled.View`
   /* padding: 15px 16px; */
 `;
 
-export const Card = styled.TouchableOpacity`
+export const Card = styled.View`
   display: flex;
   flex-direction: column;
   max-width: 328px;
@@ -56,4 +56,11 @@ export const Condition = styled.Text`
   text-transform: capitalize;
 `;
 
-export const FavoriteTouch = styled.TouchableOpacity``;
+export const ButtonsDouble = styled.View`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const CalendarButton = styled.TouchableOpacity`
+  margin-right: 20px;
+`;

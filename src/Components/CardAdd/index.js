@@ -28,12 +28,10 @@ const CardAdd = ({infos}) => {
   );
 
   function getCountry(item) {
-    console.log(item);
     return item.types[0] === 'country';
   }
 
   function getState(item) {
-    console.log(item);
     return item.types[0] === 'administrative_area_level_1';
   }
 
