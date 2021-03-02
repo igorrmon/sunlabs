@@ -1,22 +1,26 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import getCities from '../../Storage/Controllers/getCities';
 import colors from '../../UI/colors';
 const heart = <Icon name="heart" size={30} color={colors.favorite} />;
 const noHeart = <Icon name="heart-o" size={30} color={colors.favorite} />;
 const remove = <Icon name="remove" size={30} color={colors.favorite} />;
 const options = [heart, noHeart, remove];
 
-export default function FloatButtom() {
+export default function FloatButtom({setGetRealm}) {
   const [position, setPosition] = useState(options);
   const [pos, setPos] = useState(0);
   function handleOptions() {
     let aux = pos;
     if (aux === 2) {
       setPos(0);
+      aux = 0;
     } else {
       setPos(pos + 1);
+      aux = aux + 1;
     }
+    getCities(setGetRealm, aux);
   }
 
   return (

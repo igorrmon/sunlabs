@@ -25,7 +25,7 @@ function Home({navigation}) {
 
   useEffect(() => {
     if (!digit) {
-      getCities(setGetRealm);
+      getCities(setGetRealm, 0);
     }
   }, [digit]);
 
@@ -60,7 +60,7 @@ function Home({navigation}) {
               extraData={getRealm}
             />
 
-            <FloatButtom />
+            <FloatButtom setGetRealm={setGetRealm} />
           </>
         )}
 
