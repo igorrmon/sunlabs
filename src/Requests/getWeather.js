@@ -1,5 +1,5 @@
 import {weather_key} from '../Configs/weatherkey';
-import api from '../Services/api';
+import api from '../Services/weather';
 
 export default async function getWheather(
   units,

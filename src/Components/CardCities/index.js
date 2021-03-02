@@ -23,7 +23,7 @@ const noHeart = <Icon name="heart-o" size={30} color={colors.favorite} />;
 // import { Container } from './styles';
 
 const CardCities = ({infos, navigation}) => {
-  const [favorite, setFavorite] = useState(false);
+  const [favorite, setFavorite] = useState(infos.item.favorite);
   {
     console.log(infos);
   }
