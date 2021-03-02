@@ -37,7 +37,7 @@ function Home({navigation}) {
           <FlatList
             // key={(key)=> }
             contentContainerStyle={{display: 'flex', alignItems: 'center'}}
-            keyExtractor={(item, index) => index}
+            keyExtractor={(item, index) => index.toString()}
             data={results}
             renderItem={(item) => {
               return <CardAdd infos={item} setDigit={setDigit} />;
@@ -45,6 +45,17 @@ function Home({navigation}) {
             extraData={results}
           />
         ) : (
+          // <View style={{display: 'flex', alignItems: 'center'}}>
+          //   {results.map((item, index) => {
+          //     return (
+          //       <CardCities
+          //         key={item.id + '' + index}
+          //         navigation={navigation}
+          //         infos={item}
+          //       />
+          //     );
+          //   })}
+          // </View>
           <>
             <FlatList
               // key={(key)=> }

@@ -3,7 +3,7 @@ import Realm from 'realm';
 import SnackMessage from '../../Utils/messages';
 import colors from '../../UI/colors';
 
-export default function favoriteAction(id, value, lat, lon, state, name) {
+export default function favoriteAction(id, value) {
   let realm = new Realm.open({schema: [CitySchema]});
   realm
     .then((realm) => {
