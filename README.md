@@ -2,8 +2,6 @@
   sunlabs
 </h1>
 
-
-
 <h5 >
   Projeto avaliativo para Sparta Labs.
 </h5>
