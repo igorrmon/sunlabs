@@ -4,12 +4,7 @@ import colors from '../../UI/colors';
 export const Container = styled.View`
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: center; */
-
   width: 100%;
-
-  /* padding: 15px 16px; */
 `;
 
 export const Card = styled.View`

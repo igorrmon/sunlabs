@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Text, TextInput, View} from 'react-native';
+import {Text, View} from 'react-native';
 import {
   Container,
   ContainerSpace,
@@ -10,11 +10,8 @@ import {
 
 import Icon from 'react-native-vector-icons/Fontisto';
 import colors from '../../UI/colors';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 const searchIcon = <Icon name="zoom" size={16} color={colors.white} />;
 const closeIcon = <Icon name="close-a" size={16} color={colors.white} />;
-
-// import { Container } from './styles';
 
 function Header({digit, setDigit, setResults}) {
   const [viewSearch, setViewSearch] = useState(true);
@@ -57,18 +54,6 @@ function Header({digit, setDigit, setResults}) {
       )}
     </>
   );
-}
-
-{
-  /* <View>
-  {' '}
-  <Input selectionColor={colors.white} placeholder="Informe a cidade" />
-  <View>
-    <TouchableOpacity onPress={() => setViewSearch(true)}>
-      {myIcon}
-    </TouchableOpacity>
-  </View>
-</View>; */
 }
 
 export default Header;

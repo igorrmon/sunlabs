@@ -1,4 +1,3 @@
-import {color} from 'react-native-reanimated';
 import Snackbar from 'react-native-snackbar';
 import colors from '../UI/colors';
 

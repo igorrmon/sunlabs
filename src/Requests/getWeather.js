@@ -10,14 +10,9 @@ export default async function getWheather(
   favorite,
   place_id,
 ) {
-  let lang = 'pt_br';
-  // console.log('lat', lat);
-
   return api
     .get(`?units=metric&lat=${lat}&lon=${lon}&appid=${weather_key}&lang=pt_BR`)
     .then((response) => {
-      // console.log('resultado', response.data.name);
-
       return Promise.resolve({
         result: response.data,
         place_name: place_name,
@@ -25,8 +20,6 @@ export default async function getWheather(
         favorite: favorite,
         place_id: place_id,
       });
-
-      // console.log('resultado', response.data);
     })
     .catch((e) => console.log(e));
 }

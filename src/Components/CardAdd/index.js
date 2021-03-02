@@ -10,12 +10,8 @@ import {
   TouchableAddText,
 } from './styles';
 
-import Icon from 'react-native-vector-icons/FontAwesome';
-import colors from '../../UI/colors';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import saveCity from '../../Storage/Controllers/saveCity';
-
-// import { Container } from './styles';
 
 const CardAdd = ({infos, setDigit}) => {
   const city = infos.item.results[0]?.address_components[0].long_name;

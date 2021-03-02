@@ -19,8 +19,6 @@ export default function getCities(setGetRealm, type) {
   console.log('type', type);
   realm
     .then((realm) => {
-      // console.log('RESULT', realm.objects('City'));
-
       let objects = _typeFunction(type, realm);
 
       if (objects) {

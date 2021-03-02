@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {Text, View} from 'react-native';
-import {Container, SearchButton, NameCity} from './styles';
+import {View} from 'react-native';
+import {Container, SearchButton} from './styles';
 
 import Icon from 'react-native-vector-icons/Fontisto';
 import colors from '../../UI/colors';
@@ -8,11 +8,7 @@ import {TextPage} from '../Header/styles';
 
 const closeIcon = <Icon name="angle-left" size={16} color={colors.white} />;
 
-// import { Container } from './styles';
-
 function Header({navigation, city}) {
-  const [viewSearch, setViewSearch] = useState(true);
-
   function handleClose() {
     navigation.goBack();
   }
@@ -29,18 +25,6 @@ function Header({navigation, city}) {
       </Container>
     </>
   );
-}
-
-{
-  /* <View>
-  {' '}
-  <Input selectionColor={colors.white} placeholder="Informe a cidade" />
-  <View>
-    <TouchableOpacity onPress={() => setViewSearch(true)}>
-      {myIcon}
-    </TouchableOpacity>
-  </View>
-</View>; */
 }
 
 export default Header;

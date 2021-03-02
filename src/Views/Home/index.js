@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
 import CardAdd from '../../Components/CardAdd';
 import CardCities from '../../Components/CardCities';
@@ -35,7 +35,6 @@ function Home({navigation}) {
       <Container>
         {digit ? (
           <FlatList
-            // key={(key)=> }
             contentContainerStyle={{display: 'flex', alignItems: 'center'}}
             keyExtractor={(item, index) => index.toString()}
             data={results}
@@ -45,20 +44,8 @@ function Home({navigation}) {
             extraData={results}
           />
         ) : (
-          // <View style={{display: 'flex', alignItems: 'center'}}>
-          //   {results.map((item, index) => {
-          //     return (
-          //       <CardCities
-          //         key={item.id + '' + index}
-          //         navigation={navigation}
-          //         infos={item}
-          //       />
-          //     );
-          //   })}
-          // </View>
           <>
             <FlatList
-              // key={(key)=> }
               contentContainerStyle={{
                 display: 'flex',
                 alignItems: 'center',
@@ -74,8 +61,6 @@ function Home({navigation}) {
             <FloatButtom setGetRealm={setGetRealm} />
           </>
         )}
-
-        {/* // <Text>{results[0]?.description}</Text> */}
       </Container>
     </View>
   );

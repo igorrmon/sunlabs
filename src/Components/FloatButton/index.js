@@ -9,7 +9,7 @@ const remove = <Icon name="remove" size={30} color={colors.favorite} />;
 const options = [heart, noHeart, remove];
 
 export default function FloatButtom({setGetRealm}) {
-  const [position, setPosition] = useState(options);
+  const position = options;
   const [pos, setPos] = useState(0);
   function handleOptions() {
     let aux = pos;

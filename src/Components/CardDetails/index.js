@@ -7,15 +7,9 @@ import {
   Section,
   Temperature,
   Condition,
-  MinMax,
   PartOne,
   SectionTwo,
 } from './styles';
-
-import Icon from 'react-native-vector-icons/FontAwesome';
-import colors from '../../UI/colors';
-
-// import { Container } from './styles';
 
 var months = [
   'Janeiro',
@@ -42,7 +36,7 @@ var days = [
   'Sábado',
 ];
 
-const CardDetails = ({infos, navigation}) => {
+const CardDetails = ({infos, navigation, units}) => {
   function timeConvert(timestamp) {
     let date = new Date(timestamp * 1000);
     let day = date.getDate();
@@ -75,7 +69,9 @@ const CardDetails = ({infos, navigation}) => {
           </PartOne>
           <View>
             <Temperature>
-              <Text>{parseInt(infos?.item.temp.day)}°</Text>
+              <Text>
+                {parseInt(infos?.item.temp.day)}°{units}
+              </Text>
             </Temperature>
           </View>
         </Section>

@@ -22,7 +22,7 @@ export const TextPage = styled.Text`
   font-size: 20px;
   color: ${colors.white};
 `;
-// lat=-6.112330999999999&lon=-38.2052039
+
 export const Input = styled.TextInput.attrs({
   placeholderTextColor: colors.white,
 })`

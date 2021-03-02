@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Image, Text, View} from 'react-native';
+import {Text, View} from 'react-native';
 import {
   Container,
   Card,
@@ -7,7 +7,6 @@ import {
   Section,
   Temperature,
   Condition,
-  MinMax,
   PartOne,
   SectionTwo,
   ButtonsDouble,
@@ -17,13 +16,10 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 import colors from '../../UI/colors';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import Heart from '../../Assets/heart.png';
 import favoriteAction from '../../Storage/Controllers/favorite';
 const heart = <Icon name="heart" size={30} color={colors.favorite} />;
 const noHeart = <Icon name="heart-o" size={30} color={colors.favorite} />;
 const calendar = <Icon name="calendar" size={30} color={colors.primary} />;
-
-// import { Container } from './styles';
 
 const CardCities = ({infos, navigation}) => {
   const [favorite, setFavorite] = useState(infos.item.favorite);
@@ -65,7 +61,7 @@ const CardCities = ({infos, navigation}) => {
           </PartOne>
           <View>
             <Temperature>
-              <Text>{parseInt(infos.item?.result.main.temp)}°</Text>
+              <Text>{parseInt(infos.item?.result.main.temp)}°C</Text>
             </Temperature>
           </View>
         </Section>

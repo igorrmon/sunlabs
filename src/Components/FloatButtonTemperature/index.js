@@ -12,7 +12,7 @@ const fahrenheit = (
 const options = [fahrenheit, celsius];
 
 export default function FloatButtomTemperature({setUnits}) {
-  const [position, setPosition] = useState(options);
+  const position = options;
   const [pos, setPos] = useState(0);
   function handleOptions() {
     let aux = pos;
