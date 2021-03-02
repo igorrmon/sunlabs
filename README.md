@@ -25,7 +25,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
   <ul>
     <li>Busca qualquer cidade do Brasil;</li>
     <li>Adicionar cidades;</li>
-    <li>Ver condições climáticas atualizadas e dos próximos 7 dias da seman;</li>
+    <li>Ver condições climáticas atualizadas e dos próximos 7 dias da semana;</li>
     <li>Favoritar cidades;</li>
     <li>Filtrar por cidades favoritas, não favoritas e geral;</li>
     <li>Ao verificar o calendário semanal é possível converter a temperatura entre graus celsius e fahrenheit<li>
