@@ -39,7 +39,7 @@ function Home({navigation}) {
             keyExtractor={(item, index) => item.place_id}
             data={results}
             renderItem={(item) => {
-              return <CardAdd infos={item} />;
+              return <CardAdd infos={item} setDigit={setDigit} />;
             }}
             extraData={results}
           />

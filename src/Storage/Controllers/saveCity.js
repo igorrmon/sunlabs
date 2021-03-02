@@ -3,7 +3,7 @@ import Realm from 'realm';
 import SnackMessage from '../../Utils/messages';
 import colors from '../../UI/colors';
 
-export default function saveCity(lat, lon, id, city, state) {
+export default function saveCity(lat, lon, id, city, state, setDigit) {
   console.log(lat, lon, id);
   let realm = new Realm.open({schema: [CitySchema]});
   realm
@@ -14,14 +14,15 @@ export default function saveCity(lat, lon, id, city, state) {
       if (result.length === 0) {
         realm.write(() => {
           realm.create('City', {
+            place_id: id,
             lat: lat.toString(),
             long: lon.toString(),
-            place_id: id,
             place_name: city,
             place_state: state.short_name,
             favorite: false,
           });
         });
+        setDigit('');
         SnackMessage(colors.sucess, 'Cidade adicionada com sucesso!');
       } else {
         SnackMessage(

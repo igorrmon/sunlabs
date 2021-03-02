@@ -8,6 +8,7 @@ export default async function getWheather(
   place_name,
   place_state,
   favorite,
+  place_id,
 ) {
   let lang = 'pt_br';
   // console.log('lat', lat);
@@ -22,6 +23,7 @@ export default async function getWheather(
         place_name: place_name,
         place_state: place_state,
         favorite: favorite,
+        place_id: place_id,
       });
 
       // console.log('resultado', response.data);

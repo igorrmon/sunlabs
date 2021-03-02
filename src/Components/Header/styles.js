@@ -10,6 +10,8 @@ export const Container = styled.View`
   flex-direction: row;
   align-items: center;
   align-content: center;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 `;
 
 export const ContainerSpace = styled(Container)`

@@ -18,7 +18,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import colors from '../../UI/colors';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import Heart from '../../Assets/heart.png';
-
+import favoriteAction from '../../Storage/Controllers/favorite';
 const heart = <Icon name="heart" size={30} color={colors.favorite} />;
 const noHeart = <Icon name="heart-o" size={30} color={colors.favorite} />;
 const calendar = <Icon name="calendar" size={30} color={colors.primary} />;
@@ -37,6 +37,19 @@ const CardCities = ({infos, navigation}) => {
       lon: infos.item.result.coord.lon,
       city: infos.item?.place_name,
     });
+  }
+
+  function handleFavorite() {
+    let callBack = !favorite;
+    setFavorite(callBack);
+    favoriteAction(
+      infos.item?.place_id,
+      callBack,
+      infos.item.result.coord.lat,
+      infos.item.result.coord.lon,
+      infos.item?.place_state,
+      infos.item?.place_name,
+    );
   }
 
   return (
@@ -72,7 +85,7 @@ const CardCities = ({infos, navigation}) => {
               {calendar}
             </CalendarButton>
 
-            <TouchableOpacity onPress={() => setFavorite(!favorite)}>
+            <TouchableOpacity onPress={() => handleFavorite()}>
               {favorite ? heart : noHeart}
             </TouchableOpacity>
           </ButtonsDouble>

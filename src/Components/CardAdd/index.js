@@ -17,7 +17,7 @@ import saveCity from '../../Storage/Controllers/saveCity';
 
 // import { Container } from './styles';
 
-const CardAdd = ({infos}) => {
+const CardAdd = ({infos, setDigit}) => {
   const city = infos.item.results[0]?.address_components[0].long_name;
   const country = infos.item.results[0]?.address_components.find((item) =>
     getCountry(item),
@@ -42,7 +42,7 @@ const CardAdd = ({infos}) => {
     let lat = geometry.lat;
     let lon = geometry.lng;
 
-    saveCity(lat, lon, place_id, city, state);
+    saveCity(lat, lon, place_id, city, state, setDigit);
   }
 
   return (
