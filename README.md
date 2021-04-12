@@ -39,6 +39,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 
 - Instale as dependências: `yarn`;
+- Criar keys para os serviços do [OpenWeather](https://openweathermap.org/),[Google Geocode](https://developers.google.com/maps/documentation/geocoding/overview) e [Places Autocomplete](https://developers.google.com/maps/documentation/javascript/places-autocomplete)
+- Crie um arquivo .env com as seguinte keys obtidas no passo acima: PLACE_KEY e WEATHER_KEY
 - Gere o build da aplicação: `react-native run-android`;
 - Configure a aplicação na porta correta;
 - Suba o serviço para utilizar a aplicação: `react-native start`;
