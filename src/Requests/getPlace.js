@@ -1,7 +1,6 @@
 import {place_key} from '../Configs/placekey';
-import placeApi from '../Services/placeApi';
 import getGeoCode from '../Requests/getGeoCode';
-import getWheather from './getWeather';
+import placeApi from '../Services/placeApi';
 
 export default async function getPlace(local, setResults, results) {
   placeApi

@@ -1,1 +1,3 @@
-export const place_key = 'AIzaSyBhbWdJ9fF3zcnHMwV0QVtjvPcMOWlu6mQ';
+import {PLACE_KEY} from '@env';
+
+export const place_key = PLACE_KEY;
